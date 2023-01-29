@@ -454,4 +454,6 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 ## db
-API/datingapp.db
+API/database.db
+API/database.db-shm
+API/database.db-wal
