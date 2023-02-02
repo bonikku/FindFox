@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions
 {
-  public static class ApplicationServices
+  public static class ApplicationServicesExtensions
   {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
     {
@@ -17,6 +17,8 @@ namespace API.Extensions
 
       services.AddCors();
       services.AddScoped<ITokenService, TokenService>();
+      services.AddScoped<IUserRepository, UserRepository>();
+      services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
       return services;
     }

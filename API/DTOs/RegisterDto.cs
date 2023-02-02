@@ -1,9 +1,8 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc;
 
-namespace API.Models
+namespace API.DTOs
 {
-  public class RegisterModel
+  public class RegisterDto
   {
     [Required]
     public string Username { get; set; }
