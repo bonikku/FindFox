@@ -49,14 +49,14 @@
           <h4 class="mt-2">Location details:</h4>
           <div class="d-flex flex-row align-items-center">
             <label for="forest">Forest: </label>
-            <input type="text" [(ngModel)]="member.forest" name="forest" class="form-control mx-2" />
+            <input type="text" [(ngModel)]="member.forest" name="fores t" class="form-control mx-2" />
             <label for="country">Country: </label>
             <input type="text" [ngModel]="member.country" name="country" class="form-control mx-2" />
           </div>
         </form>
       </tab>
       <tab heading="Edit photos">
-        <p>Photo edit</p>
+        <app-photo-editor [member]="member"></app-photo-editor>
       </tab>
     </tabset>
   </div>
