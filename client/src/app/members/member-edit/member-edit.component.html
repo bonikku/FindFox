@@ -9,11 +9,7 @@
   </div>
   <div class="col-4">
     <div class="card">
-      <img
-        src="{{ member.photoUrl || './assets/user.png' }}"
-        alt="{{ member.aka }}"
-        class="card-img-top img-thumbnail"
-      />
+      <img src="{{ member.photoUrl }}" alt="{{ member.aka }}" class="card-img-top img-thumbnail" />
       <div class="card-body">
         <strong>Location</strong>
         <p>{{ member.forest }}, {{ member.country }}</p>
@@ -31,7 +27,9 @@
         <p>{{ member.created }}</p>
       </div>
       <div class="card-footer">
-        <button type="submit" [disabled]="!editForm.dirty" form="editForm" class="btn btn-success">Save changes</button>
+        <button type="submit" [disabled]="!editForm.dirty" form="editForm" class="btn btn-success">
+          Save changes
+        </button>
       </div>
     </div>
   </div>
@@ -41,17 +39,37 @@
       <tab heading="About {{ member.aka }}">
         <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
           <h4 class="mt-2">Description</h4>
-          <textarea class="form-control" [(ngModel)]="member.introduction" name="introduction" rows="6"></textarea>
+          <textarea
+            class="form-control"
+            [(ngModel)]="member.introduction"
+            name="introduction"
+            rows="6"
+          ></textarea>
           <h4 class="mt-2">Looking for</h4>
-          <textarea class="form-control" [(ngModel)]="member.lookingFor" name="lookingFor" rows="6"></textarea>
+          <textarea
+            class="form-control"
+            [(ngModel)]="member.lookingFor"
+            name="lookingFor"
+            rows="6"
+          ></textarea>
           <h4 class="mt-2">Interests</h4>
-          <textarea class="form-control" [(ngModel)]="member.interests" name="interests" rows="6"></textarea>
+          <textarea
+            class="form-control"
+            [(ngModel)]="member.interests"
+            name="interests"
+            rows="6"
+          ></textarea>
           <h4 class="mt-2">Location details:</h4>
           <div class="d-flex flex-row align-items-center">
             <label for="forest">Forest: </label>
-            <input type="text" [(ngModel)]="member.forest" name="fores t" class="form-control mx-2" />
+            <input type="text" [(ngModel)]="member.forest" name="forest" class="form-control mx-2" />
             <label for="country">Country: </label>
-            <input type="text" [ngModel]="member.country" name="country" class="form-control mx-2" />
+            <input type="text" [(ngModel)]="member.country" name="country" class="form-control mx-2" />
+          </div>
+          <h4 class="mt-2">Nickname:</h4>
+          <div class="d-flex align-items-center col-6">
+            <label for="aka">Current: </label>
+            <input type="text" [(ngModel)]="member.aka" name="aka" class="form-control mx-2" />
           </div>
         </form>
       </tab>

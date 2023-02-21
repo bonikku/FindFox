@@ -7,5 +7,6 @@ namespace API.DTOs
     public string Interests { get; set; }
     public string Forest { get; set; }
     public string Country { get; set; }
+    public string Aka { get; set; }
   }
 }

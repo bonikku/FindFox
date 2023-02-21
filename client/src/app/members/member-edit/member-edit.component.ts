@@ -14,7 +14,11 @@ import { MembersService } from 'src/app/_services/members.service'
 })
 export class MemberEditComponent implements OnInit {
   // prettier-ignore
-  @HostListener('window:beforeunload')
+  @HostListener('window:beforeunload', ['$event']) unloadNotification($event:any) {
+    if (this.editForm?.dirty) {
+      $event.returnValue = 1
+    }
+  }
   @ViewChild('editForm') editForm: NgForm | undefined
   member: Member | undefined
   user: User | null = null
